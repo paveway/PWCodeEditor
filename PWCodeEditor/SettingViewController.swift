@@ -51,7 +51,7 @@ class SettingViewController: UITableViewController, UITableViewDataSource, UITab
     */
     override func viewWillAppear(animated: Bool) {
         // ツールバーを表示しない。
-        self.navigationController?.setToolbarHidden(false, animated: true)
+        self.navigationController?.setToolbarHidden(true, animated: true)
         
         // スーパークラスのメソッドを呼び出す。
         super.viewWillAppear(animated)

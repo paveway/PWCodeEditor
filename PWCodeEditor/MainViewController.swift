@@ -18,11 +18,10 @@ class MainViewController: UITableViewController, UITableViewDataSource, UITableV
     let kScreenTitle = "PWコードエディタ"
     
     /** ツールバーボタン名配列 */
-    let kToolBarButtonNames = ["連携",  "設定", "ヘルプ"]
+    let kToolBarButtonNames = ["設定", "ヘルプ"]
     
     /** ツールバーボタン名列挙子 */
     enum TooBarButtonName: NSInteger {
-        case Cooperation = 0
         case Setting = 1
         case Help = 2
     }
@@ -34,13 +33,15 @@ class MainViewController: UITableViewController, UITableViewDataSource, UITableV
     let kSectionNum = 1
     
     /** セル名配列 */
-    let kCellNames = ["ローカルファイル", "最近使用したファイル", "開発"]
+    let kCellNames = ["最近使用したファイル", "ローカルファイル", "Dropbox", "Github", "開発"]
     
     /** セル名列挙子 */
     enum CellName: NSInteger {
-        case LocalFiles = 0
-        case RecentFiles = 1
-        case Develop = 2
+        case RecentFiles = 0
+        case LocalFiles = 1
+        case Dropbox = 2
+        case Github = 3
+        case Develop = 4
     }
     
     /** ルートディレクトリ名 */
@@ -116,8 +117,17 @@ class MainViewController: UITableViewController, UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
     }
     
+    /**
+    画面が表示される前に呼び出される。
+    
+    :param: animated アニメーションの指定
+    */
     override func viewWillAppear(animated: Bool) {
+        // ツールバーを表示する。
         self.navigationController?.setToolbarHidden(false, animated: true)
+        
+        // スーパークラスのメソッドを呼び出す。
+        super.viewWillAppear(animated)
     }
     
     // MARK: - UITableViewDataSource
@@ -165,23 +175,31 @@ class MainViewController: UITableViewController, UITableViewDataSource, UITableV
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 選択状態を解除する。
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        // ローカルファイルメニューの場合
-        if indexPath.row == CellName.LocalFiles.hashValue {
+
+        // 最近使用したファイル一覧の場合
+        if indexPath.row == CellName.RecentFiles.hashValue {
+            // 最近使用したファイル一覧画面に遷移する。
+            let vc = RecentFileListViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+    
+        // ローカルファイルの場合
+        } else if indexPath.row == CellName.LocalFiles.hashValue {
             // ローカルファイル一覧画面に遷移する。
             let rootDirPath = FileUtil.getDirPath(kRootDirName)
             let vc = LocalFileListViewController(pathName: rootDirPath)
             self.navigationController?.pushViewController(vc, animated: true)
         
-        // 最近使用したファイル一覧メニューの場合
-        } else if indexPath.row == CellName.LocalFiles.hashValue {
-            // 最近使用したファイル一覧画面に遷移する。
-            let vc = RecentFileListViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+        // Dropboxの場合
+        } else if indexPath.row == CellName.Dropbox.hashValue {
+            // TODO: 未実装
+            
+        // Githubの場合
+        } else if indexPath.row == CellName.Github.hashValue {
+            // TODO: 未実装
         
         // 開発メニューの場合        
         } else if indexPath.row == CellName.Develop.hashValue {
-            // TODO:未実装
+            // TODO: 未実装
         }
     }
     
@@ -193,14 +211,8 @@ class MainViewController: UITableViewController, UITableViewDataSource, UITableV
     :param: sender 押下されたツールバーボタン
     */
     func toolbarButtonPressed(sender: UIBarButtonItem) {
-        // 連携ボタンの場合
-        if sender.tag == TooBarButtonName.Cooperation.hashValue {
-            // 連携画面に遷移する。
-            let vc = CooperationViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-
         // ヘルプボタンの場合
-        } else if sender.tag == TooBarButtonName.Help.hashValue {
+        if sender.tag == TooBarButtonName.Help.hashValue {
             // ヘルプ画面に遷移する。
             let vc = HelpViewController()
             self.navigationController?.pushViewController(vc, animated: true)
@@ -220,17 +232,8 @@ class MainViewController: UITableViewController, UITableViewDataSource, UITableV
     */
     private func setToolbar() {
         // ツールバーのボタンを生成する。
-        // 連携ボタン
-        var index = TooBarButtonName.Cooperation.hashValue
-        let functionButton =
-        UIBarButtonItem(title: kToolBarButtonNames[index],
-            style: UIBarButtonItemStyle.Plain,
-            target: self,
-            action: "toolbarButtonPressed:")
-        functionButton.tag = index
-        
         // 設定ボタン
-        index = TooBarButtonName.Setting.hashValue
+        var index = TooBarButtonName.Setting.hashValue
         let settingButton =
         UIBarButtonItem(title: kToolBarButtonNames[index],
             style: UIBarButtonItemStyle.Plain,
@@ -254,7 +257,7 @@ class MainViewController: UITableViewController, UITableViewDataSource, UITableV
             action: nil)
         
         // ツールバーのボタンを設定する。
-        let buttons: NSArray = [functionButton, gap, settingButton, gap, helpButton]
+        let buttons: NSArray = [settingButton, gap, helpButton]
         self.toolbarItems = buttons as [AnyObject]
         
         // ツールバーを表示する。

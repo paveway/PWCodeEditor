@@ -18,14 +18,13 @@ class LocalFileListViewController: UITableViewController, UITableViewDataSource,
     let kCellName = "Cell"
     
     /** ツールバーボタン名配列 */
-    let kToolBarButtonNames = ["連携",  "＋", "設定", "ヘルプ"]
+    let kToolBarButtonNames = ["＋", "設定", "ヘルプ"]
     
     /** ツールバーボタン名列挙子 */
     enum TooBarButtonName: NSInteger {
-        case Cooperation = 0
-        case Create = 1
-        case Setting = 2
-        case Help = 3
+        case Add = 0
+        case Setting = 1
+        case Help = 2
     }
     
     /** パス名 */
@@ -92,19 +91,6 @@ class LocalFileListViewController: UITableViewController, UITableViewDataSource,
         
         // ツールバーを設定する。
         setToolbar()
-
-        // ファイル名リストを取得する
-        let error: NSErrorPointer = nil
-        fileNameList? = FileUtil.getFileNameList(pathName, error: error)
-        // エラーの場合
-        if error != nil {
-            // エラーダイアログを表示する。
-            let errorDialog = Dialog.createDialog("エラー", message: "ファイル名リストが取得できません。", handler: nil)
-            presentViewController(errorDialog, animated: true, completion: {
-                // 元の画面に戻る。
-                navigationController?.popViewControllerAnimated(true)
-            })
-        }
     }
     
     /**
@@ -135,6 +121,17 @@ class LocalFileListViewController: UITableViewController, UITableViewDataSource,
                 // 元の画面に戻る。
                 navigationController?.popViewControllerAnimated(true)
             })
+        }
+        
+        // ファイルがない場合
+        if fileNameList?.count == 0 {
+            // Editボタンを無効にする。
+            navigationItem.rightBarButtonItem?.enabled = false;
+            
+            // ファイルがある場合
+        } else {
+            // Editボタンを有効にする。
+            navigationItem.rightBarButtonItem?.enabled = true;
         }
         
         // テーブルビューをリロードする。
@@ -233,6 +230,20 @@ class LocalFileListViewController: UITableViewController, UITableViewDataSource,
                 // ファイルリストとテーブルビューを更新する。
                 fileNameList?.removeAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                
+                // ファイルがない場合
+                if fileNameList?.count == 0 {
+                    // Editボタンに変更する。
+                    setEditing(false, animated: true)
+                    
+                    // Editボタンを無効にする。
+                    navigationItem.rightBarButtonItem?.enabled = false;
+                
+                // ファイルがある場合
+                } else {
+                    // Editボタンを有効にする。
+                    navigationItem.rightBarButtonItem?.enabled = true;
+                }
             
             // ファイルが削除できない場合
             } else {
@@ -281,31 +292,25 @@ class LocalFileListViewController: UITableViewController, UITableViewDataSource,
     /**
     ツールバーボタンを押下した時の処理
 
-    :param: sender バーボタン
+    :param: sender ツールバーボタン
     */
     func toolbarButtonPressed(sender: UIBarButtonItem) {
-        // 連携ツールボタンの場合
-        if sender.tag == TooBarButtonName.Cooperation.hashValue {
-            // 連携画面に遷移する。
-            let vc = CooperationViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-        // 生成ツールボタンの場合
-        } else if sender.tag == TooBarButtonName.Create.hashValue {
+        // 追加ツールボタンの場合
+        if sender.tag == TooBarButtonName.Add.hashValue {
             // ファイル生成画面に遷移する。
             let vc = CreateFileViewController(pathName: pathName)
-            navigationController?.pushViewController(vc, animated: true)
-            
-        // ヘルプツールボタンの場合
-        } else if sender.tag == TooBarButtonName.Help.hashValue {
-            // ヘルプ画面に遷移する。
-            let vc = HelpViewController()
             navigationController?.pushViewController(vc, animated: true)
             
         // 設定ツールボタンの場合
         } else if sender.tag == TooBarButtonName.Setting.hashValue {
             // 設定画面に遷移する。
             let vc = SettingViewController()
+            navigationController?.pushViewController(vc, animated: true)
+            
+        // ヘルプツールボタンの場合
+        } else if sender.tag == TooBarButtonName.Help.hashValue {
+            // ヘルプ画面に遷移する。
+            let vc = HelpViewController()
             navigationController?.pushViewController(vc, animated: true)
             
         // 上記以外
@@ -321,23 +326,14 @@ class LocalFileListViewController: UITableViewController, UITableViewDataSource,
     */
     private func setToolbar() {
         // ツールバーのボタンを生成する。
-        // 連携ボタン
-        var index = TooBarButtonName.Cooperation.hashValue
-        let cooperationButton =
-        UIBarButtonItem(title: kToolBarButtonNames[index],
-            style: UIBarButtonItemStyle.Plain,
-            target: self,
-            action: "toolbarButtonPressed:")
-        cooperationButton.tag = index
-        
         // ＋ボタン
-        index = TooBarButtonName.Create.hashValue
-        let createButton =
+        var index = TooBarButtonName.Add.hashValue
+        let addButton =
         UIBarButtonItem(title: kToolBarButtonNames[index],
             style: UIBarButtonItemStyle.Plain,
             target: self,
             action: "toolbarButtonPressed:")
-        createButton.tag = index
+        addButton.tag = index
         
         // 設定ボタン
         index = TooBarButtonName.Setting.hashValue
@@ -364,7 +360,7 @@ class LocalFileListViewController: UITableViewController, UITableViewDataSource,
             action: nil)
         
         // ツールバーのボタンを設定する。
-        let buttons: NSArray = [cooperationButton, gap, createButton, gap, settingButton, gap, helpButton]
+        let buttons: NSArray = [addButton, gap, settingButton, gap, helpButton]
         toolbarItems = buttons as [AnyObject]
         
         // ツールバーを表示する。

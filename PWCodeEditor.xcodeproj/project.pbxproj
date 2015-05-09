@@ -10,7 +10,6 @@
 		D03563621AFD975A00662444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563611AFD975A00662444 /* AppDelegate.swift */; };
 		D03563691AFD975B00662444 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03563681AFD975B00662444 /* Images.xcassets */; };
 		D03563781AFD975B00662444 /* PWCodeEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563771AFD975B00662444 /* PWCodeEditorTests.swift */; };
-		D03563851AFD99B000662444 /* CooperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563831AFD99B000662444 /* CooperationViewController.swift */; };
 		D03563861AFD99B000662444 /* CreateFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563841AFD99B000662444 /* CreateFileViewController.swift */; };
 		D035638D1AFD99C700662444 /* EditFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563871AFD99C700662444 /* EditFileViewController.swift */; };
 		D035638E1AFD99C700662444 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563881AFD99C700662444 /* HelpViewController.swift */; };
@@ -42,7 +41,6 @@
 		D03563711AFD975B00662444 /* PWCodeEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWCodeEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03563761AFD975B00662444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03563771AFD975B00662444 /* PWCodeEditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWCodeEditorTests.swift; sourceTree = "<group>"; };
-		D03563831AFD99B000662444 /* CooperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CooperationViewController.swift; sourceTree = "<group>"; };
 		D03563841AFD99B000662444 /* CreateFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFileViewController.swift; sourceTree = "<group>"; };
 		D03563871AFD99C700662444 /* EditFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFileViewController.swift; sourceTree = "<group>"; };
 		D03563881AFD99C700662444 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -133,13 +131,12 @@
 			isa = PBXGroup;
 			children = (
 				D035638A1AFD99C700662444 /* MainViewController.swift */,
-				D03563891AFD99C700662444 /* LocalFileListViewController.swift */,
 				D035638B1AFD99C700662444 /* RecentFileListViewController.swift */,
+				D03563891AFD99C700662444 /* LocalFileListViewController.swift */,
 				D03563871AFD99C700662444 /* EditFileViewController.swift */,
 				D03563841AFD99B000662444 /* CreateFileViewController.swift */,
-				D03563831AFD99B000662444 /* CooperationViewController.swift */,
-				D03563881AFD99C700662444 /* HelpViewController.swift */,
 				D035638C1AFD99C700662444 /* SettingViewController.swift */,
+				D03563881AFD99C700662444 /* HelpViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -260,7 +257,6 @@
 				D03563991AFD9A0300662444 /* FileUtil.swift in Sources */,
 				D03563861AFD99B000662444 /* CreateFileViewController.swift in Sources */,
 				D035639A1AFD9A0300662444 /* LocaleConstants.swift in Sources */,
-				D03563851AFD99B000662444 /* CooperationViewController.swift in Sources */,
 				D03563621AFD975A00662444 /* AppDelegate.swift in Sources */,
 				D03563921AFD99C700662444 /* SettingViewController.swift in Sources */,
 				D03563911AFD99C700662444 /* RecentFileListViewController.swift in Sources */,

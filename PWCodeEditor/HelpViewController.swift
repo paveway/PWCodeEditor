@@ -53,8 +53,8 @@ class HelpViewController: UITableViewController, UITableViewDataSource, UITableV
     :param: animated アニメーションの指定
     */
     override func viewWillAppear(animated: Bool) {
-        // ツールバーを表示する。
-        self.navigationController?.setToolbarHidden(false, animated: true)
+        // ツールバーを表示しない。
+        self.navigationController?.setToolbarHidden(true, animated: true)
         
         // スーパークラスのメソッドを呼び出す。
         super.viewWillAppear(animated)

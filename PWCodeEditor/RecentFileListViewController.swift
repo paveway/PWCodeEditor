@@ -15,13 +15,13 @@ import UIKit
 class RecentFileListViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     /** 画面タイトル */
-    let kScreenTitle = "最近使用したファイル一覧"
+    let kScreenTitle = "最近使用したファイル"
     
     /** セル名 */
     let kCellName = "Cell"
     
     /** ツールバーボタン名配列 */
-    let kToolbarButtonNames = ["クリアリスト"]
+    let kToolbarButtonNames = ["リストクリア"]
     
     /** ツールバーボタン名列挙子 */
     enum TooBarButtonName: NSInteger {
