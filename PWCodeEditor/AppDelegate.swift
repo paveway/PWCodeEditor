@@ -8,14 +8,41 @@
 
 import UIKit
 
+/**
+PWコードエディタ
+アプリケーションデリゲートクラス
+
+:version: 1.0 新規作成
+*/
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    /** ウィンドウオブジェクト */
     var window: UIWindow?
 
-
+    /**
+    起動後に呼び出される。
+    
+    :param: launchOptions 起動オプション
+    :return: 処理結果
+    */
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // ビューコントローラを生成する。
+        let vc = MainViewController(style: UITableViewStyle.Grouped)
+        
+        // ナビゲーションコントローラを生成する。
+        let nc = UINavigationController(rootViewController: vc)
+        
+        // ウィンドウを生成する。
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        // ウィンドウのルートビューコントローラを設定する。
+        self.window?.rootViewController = nc
+        
+        // ウィンドウを表示する。
+        self.window?.makeKeyAndVisible()
+        
+        // 処理結果正常を返却する。
         return true
     }
 

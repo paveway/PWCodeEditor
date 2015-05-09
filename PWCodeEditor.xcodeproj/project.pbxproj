@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		D03563621AFD975A00662444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563611AFD975A00662444 /* AppDelegate.swift */; };
-		D03563641AFD975A00662444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563631AFD975A00662444 /* ViewController.swift */; };
-		D03563671AFD975A00662444 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03563651AFD975A00662444 /* Main.storyboard */; };
 		D03563691AFD975B00662444 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03563681AFD975B00662444 /* Images.xcassets */; };
-		D035636C1AFD975B00662444 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D035636A1AFD975B00662444 /* LaunchScreen.xib */; };
 		D03563781AFD975B00662444 /* PWCodeEditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563771AFD975B00662444 /* PWCodeEditorTests.swift */; };
+		D03563851AFD99B000662444 /* CooperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563831AFD99B000662444 /* CooperationViewController.swift */; };
+		D03563861AFD99B000662444 /* CreateFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563841AFD99B000662444 /* CreateFileViewController.swift */; };
+		D035638D1AFD99C700662444 /* EditFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563871AFD99C700662444 /* EditFileViewController.swift */; };
+		D035638E1AFD99C700662444 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563881AFD99C700662444 /* HelpViewController.swift */; };
+		D035638F1AFD99C700662444 /* LocalFileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563891AFD99C700662444 /* LocalFileListViewController.swift */; };
+		D03563901AFD99C700662444 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035638A1AFD99C700662444 /* MainViewController.swift */; };
+		D03563911AFD99C700662444 /* RecentFileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035638B1AFD99C700662444 /* RecentFileListViewController.swift */; };
+		D03563921AFD99C700662444 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035638C1AFD99C700662444 /* SettingViewController.swift */; };
+		D03563941AFD99F300662444 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563931AFD99F300662444 /* Dialog.swift */; };
+		D03563991AFD9A0300662444 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563951AFD9A0300662444 /* FileUtil.swift */; };
+		D035639A1AFD9A0300662444 /* LocaleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563961AFD9A0300662444 /* LocaleConstants.swift */; };
+		D035639B1AFD9A0300662444 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03563971AFD9A0300662444 /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +38,22 @@
 		D035635C1AFD975A00662444 /* PWCodeEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWCodeEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03563601AFD975A00662444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03563611AFD975A00662444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D03563631AFD975A00662444 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D03563661AFD975A00662444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D03563681AFD975B00662444 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D035636B1AFD975B00662444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D03563711AFD975B00662444 /* PWCodeEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PWCodeEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03563761AFD975B00662444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03563771AFD975B00662444 /* PWCodeEditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWCodeEditorTests.swift; sourceTree = "<group>"; };
+		D03563831AFD99B000662444 /* CooperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CooperationViewController.swift; sourceTree = "<group>"; };
+		D03563841AFD99B000662444 /* CreateFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFileViewController.swift; sourceTree = "<group>"; };
+		D03563871AFD99C700662444 /* EditFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFileViewController.swift; sourceTree = "<group>"; };
+		D03563881AFD99C700662444 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		D03563891AFD99C700662444 /* LocalFileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileListViewController.swift; sourceTree = "<group>"; };
+		D035638A1AFD99C700662444 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D035638B1AFD99C700662444 /* RecentFileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentFileListViewController.swift; sourceTree = "<group>"; };
+		D035638C1AFD99C700662444 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		D03563931AFD99F300662444 /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		D03563951AFD9A0300662444 /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
+		D03563961AFD9A0300662444 /* LocaleConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleConstants.swift; sourceTree = "<group>"; };
+		D03563971AFD9A0300662444 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				D03563611AFD975A00662444 /* AppDelegate.swift */,
-				D03563631AFD975A00662444 /* ViewController.swift */,
-				D03563651AFD975A00662444 /* Main.storyboard */,
+				D03563821AFD999300662444 /* Util */,
+				D03563811AFD998B00662444 /* ViewController */,
 				D03563681AFD975B00662444 /* Images.xcassets */,
-				D035636A1AFD975B00662444 /* LaunchScreen.xib */,
 				D035635F1AFD975A00662444 /* Supporting Files */,
 			);
 			path = PWCodeEditor;
@@ -110,6 +127,32 @@
 				D03563761AFD975B00662444 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D03563811AFD998B00662444 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D035638A1AFD99C700662444 /* MainViewController.swift */,
+				D03563891AFD99C700662444 /* LocalFileListViewController.swift */,
+				D035638B1AFD99C700662444 /* RecentFileListViewController.swift */,
+				D03563871AFD99C700662444 /* EditFileViewController.swift */,
+				D03563841AFD99B000662444 /* CreateFileViewController.swift */,
+				D03563831AFD99B000662444 /* CooperationViewController.swift */,
+				D03563881AFD99C700662444 /* HelpViewController.swift */,
+				D035638C1AFD99C700662444 /* SettingViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		D03563821AFD999300662444 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D03563961AFD9A0300662444 /* LocaleConstants.swift */,
+				D03563971AFD9A0300662444 /* Log.swift */,
+				D03563951AFD9A0300662444 /* FileUtil.swift */,
+				D03563931AFD99F300662444 /* Dialog.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,8 +235,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03563671AFD975A00662444 /* Main.storyboard in Resources */,
-				D035636C1AFD975B00662444 /* LaunchScreen.xib in Resources */,
 				D03563691AFD975B00662444 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +253,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03563641AFD975A00662444 /* ViewController.swift in Sources */,
+				D03563901AFD99C700662444 /* MainViewController.swift in Sources */,
+				D03563941AFD99F300662444 /* Dialog.swift in Sources */,
+				D035639B1AFD9A0300662444 /* Log.swift in Sources */,
+				D035638D1AFD99C700662444 /* EditFileViewController.swift in Sources */,
+				D03563991AFD9A0300662444 /* FileUtil.swift in Sources */,
+				D03563861AFD99B000662444 /* CreateFileViewController.swift in Sources */,
+				D035639A1AFD9A0300662444 /* LocaleConstants.swift in Sources */,
+				D03563851AFD99B000662444 /* CooperationViewController.swift in Sources */,
 				D03563621AFD975A00662444 /* AppDelegate.swift in Sources */,
+				D03563921AFD99C700662444 /* SettingViewController.swift in Sources */,
+				D03563911AFD99C700662444 /* RecentFileListViewController.swift in Sources */,
+				D035638F1AFD99C700662444 /* LocalFileListViewController.swift in Sources */,
+				D035638E1AFD99C700662444 /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,25 +286,6 @@
 			targetProxy = D03563721AFD975B00662444 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D03563651AFD975A00662444 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D03563661AFD975A00662444 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D035636A1AFD975B00662444 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D035636B1AFD975B00662444 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D03563791AFD975B00662444 /* Debug */ = {
@@ -340,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PWCodeEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PWCodeEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +444,7 @@
 				D035637D1AFD975B00662444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D035637E1AFD975B00662444 /* Build configuration list for PBXNativeTarget "PWCodeEditorTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +453,7 @@
 				D03563801AFD975B00662444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
